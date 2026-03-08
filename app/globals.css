@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0d0c12;
+  --foreground: #fafafa;
+  --primary-gradient: linear-gradient(to right, #f43f5e, #ec4899, #d946ef);
+  --accent-pink: #f43f5e;
+  --text-gradient: linear-gradient(to bottom right, #fca5a5, #f472b6, #fb7185);
+}
+
+.dark {
+  --background: #0d0c12;
+  --foreground: #fafafa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: radial-gradient(circle at 50% -20%, #2e1065 0%, #1e1b4b 30%, #0f172a 60%, #020617 100%);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add this to your CSS file or style section */
+@media (min-width: 768px) {
+  .floating-dock-desktop {
+    height: calc(var(--spacing) * 16);
+    max-width: var(--container-2xl);
+    align-items: safe flex-end;
+    justify-content: center;
+    gap: calc(var(--spacing) * 8);
+    background-color: #2D2A3A;
+    padding-inline: calc(var(--spacing) * 4);
+    padding-bottom: calc(var(--spacing) * 3);
+    --tw-backdrop-blur: blur(var(--blur-sm));
+    backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+    display: flex;
+  }
+  
+  /* Hide mobile version on desktop */
+  .floating-dock-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Hide desktop version on mobile */
+  .floating-dock-desktop {
+    display: none;
+  }
+  
+  /* Keep mobile styles as they are */
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #ec4899, #f43f5e, #fb7185);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-accent-gradient {
+  background: linear-gradient(to right, #ec4899, #f43f5e, #fb7185);
+}
+
+.border-accent-pink {
+  border-color: #f43f5e !important;
+}
+
+* {
+  @apply border-white/5;
+}
+
+body {
+  background: #1B1922;
+  color: #fafafa;
+  font-family: var(--font-sans);
+}
